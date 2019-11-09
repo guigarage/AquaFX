@@ -1,0 +1,147 @@
+.root{
+    -dark-red: rgb(226.0, 61.0, 56.0);
+    -dark-red-transparent: rgb(226.0, 61.0, 56.0, 0.8);
+    -dark-red-armed: rgb(165.0, 64.0, 59.0);
+    -light-red: rgb(251.0, 207.0, 202.0);
+    -light-red-armed: rgb(187.0, 156.0, 152.0 );
+    -orange-red: rgb(226.0, 90.0, 56.0);
+    -light-orange-red: rgb(251.0, 177.0, 175.0);
+    -light-orange-red-armed: rgb(222.0, 175.0, 174.0);
+    -lighter-red: rgb(251, 231, 228);
+    -lighter-orange-red: rgb(250, 216, 216);
+    
+    -fx-selected-row: -dark-red;
+    
+    -main-gradient-armed: linear-gradient(-light-red-armed 15.0%, -dark-red-armed 50.0%,
+       -dark-red-armed 50.0%, -light-orange-red-armed 100.0%);
+            
+    -main-gradient: linear-gradient(-light-red 15.0%, -dark-red 50.0%,
+        -dark-red 50.0%, -light-orange-red 100.0%);
+        
+    -fx-cell-hover-color: -light-red;
+}
+
+.hyperlink {
+    -fx-text-fill: -dark-red;
+}
+
+.button,
+.toggle-button,
+.radio-button,
+.choice-box,
+.slider,
+.text-field,
+.password-field,
+.text-area,
+.menu-button,
+.split-menu-button,
+.combo-box,
+.color-picker,
+.check-box {
+    -fx-aqua-inner-focus-color: -dark-red-transparent;
+    -fx-aqua-outer-focus-color: -dark-red;
+}
+
+.button{
+    -fx-aqua-start-color-1: -light-red;
+    -fx-aqua-start-color-2: -dark-red;
+    -fx-aqua-start-color-3: -dark-red;
+    -fx-aqua-start-color-4: -light-orange-red;
+    -fx-aqua-end-color-1: -lighter-red;
+    -fx-aqua-end-color-2: -light-orange-red;
+    -fx-aqua-end-color-3: -light-orange-red;
+    -fx-aqua-end-color-4: -lighter-orange-red;
+    -fx-aqua-armed-style:"linear-gradient(-light-red 0.0%, -dark-red-armed 100.0% ),
+        -main-gradient,
+        radial-gradient(focus-angle 180.0deg, focus-distance 95.0%, center 1.0% 50.0%,
+        radius 50.0%, -dark-red, transparent),
+        radial-gradient(focus-angle 0.0deg, focus-distance 95.0%, center 100.0% 50.0%,
+        radius 50.0%, -dark-red, transparent)";
+}
+
+.button:armed, .button:default:armed, .toggle-button:armed, .toggle-button:selected:armed{
+    -fx-background-color:
+        linear-gradient(-light-red 0.0%, -dark-red-armed 100.0% ),
+        -main-gradient,
+        radial-gradient(focus-angle 180.0deg, focus-distance 95.0%, center 1.0% 50.0%,
+        radius 50.0%, -dark-red, transparent),
+        radial-gradient(focus-angle 0.0deg, focus-distance 95.0%, center 100.0% 50.0%,
+        radius 50.0%, -dark-red, transparent);
+}
+
+.check-box:selected > .box,
+.check-box:indeterminate > .box,
+.radio-button:selected > .radio {
+    -fx-background-color: -main-gradient;
+}
+
+.check-box:selected:armed > .box,
+.radio-button:selected:armed > .radio {
+    -fx-background-color: -main-gradient-armed;
+}
+
+.titled-pane:focused  > .title > .arrow-button > .arrow  {
+    -fx-effect: dropshadow(one-pass-box , -dark-red, 6.5, 0.8 , 0.0, 0.0);
+}
+
+
+/* Draws focus border around tableview */
+.table-view:focused,
+.tree-table-view:focused,
+.tree-view:focused,
+.list-view:focused  {
+    -fx-effect: dropshadow(one-pass-box , -dark-red-transparent, 8.0, 0.8 , 0.0, 0.0);
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected, 
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected,
+.table-view:row-selection:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused:selected:hover,
+.tree-table-view:row-selection:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused:selected:hover,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected, 
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected:hover,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected:hover {
+    -fx-background-color: -fx-selected-row;
+}
+
+/* When the list-cell is selected and focused */
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient( -light-orange-red, -dark-red-armed),
+     linear-gradient(-light-orange-red, -dark-red);
+}
+
+/* When the ListView is _not_ focused, we show alternate selection colors */
+.list-cell:filled:selected:focused,
+.list-cell:filled:selected {
+    -fx-background-color: linear-gradient(-light-orange-red-armed, -dark-red-armed),
+     linear-gradient(-light-orange-red-armed, -dark-red-armed);
+}
+
+.list-view:horizontal:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, -light-orange-red, -dark-red-armed),
+        linear-gradient(to right, -light-orange-red, -dark-red);
+}
+
+.list-view:horizontal > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, -light-orange-red-armed, -dark-red-armed),
+     linear-gradient(to right, -light-orange-red-armed, -dark-red-armed);
+}
+
+.pagination > .pagination-control > .control-box > .bullet-button:selected {   
+    -fx-background-color: -main-gradient;
+}
+
+.progress-indicator > .determinate-indicator > .progress {
+    -fx-background-color:
+       rgb(208.0, 208.0, 208.0),
+       radial-gradient(center 50.0% 50.0%, radius 50.0%, -dark-red, -orange-red);
+}
+
+.progress-bar {
+    -fx-aqua-determinate-image: "progress_fire.png";
+}
+
+.progress-bar:indeterminate  {
+      -fx-aqua-indeterminate-color:-dark-red;      
+}

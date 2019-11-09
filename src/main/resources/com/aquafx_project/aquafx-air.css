@@ -1,0 +1,160 @@
+.root{
+    -dark-wind: rgb(248.0, 248.0, 248.0);
+    -dark-wind-transparent: rgb(255.0, 255.0, 255.0, 0.8);
+    -dark-wind-armed: rgb(200.0, 200.0, 200.0);
+    -light-wind: rgb(255.0, 255.0, 255.0);
+    -light-wind-armed: rgb(248.0, 248.0, 248.0 );
+    -white-wind: rgb(250.0, 250.0, 250.0);
+    -light-white-wind: rgb(255.0, 255.0, 255.0);
+    -light-white-wind-armed: rgb(248.0, 248.0, 248.0);
+    -lighter-wind: rgb(255.0, 255.0, 255.0);
+    -lighter-white-wind: rgb(255.0, 255.0, 255.0);
+    
+    -fx-selected-row: -dark-wind-armed;
+    
+    -main-gradient-armed: linear-gradient(-light-wind-armed 15.0%, -dark-wind-armed 50.0%,
+       -dark-wind-armed 50.0%, -light-white-wind-armed 100.0%);
+            
+    -main-gradient: linear-gradient(-light-wind 15.0%, -dark-wind 50.0%,
+        -dark-wind 50.0%, -light-white-wind 100.0%);
+        
+    -fx-cell-hover-color: -light-wind;
+}
+
+.hyperlink {
+    -fx-text-fill: -dark-wind;
+}
+
+.button,
+.toggle-button,
+.radio-button,
+.choice-box,
+.slider,
+.text-field,
+.password-field,
+.text-area,
+.menu-button,
+.split-menu-button,
+.combo-box,
+.color-picker,
+.check-box {
+    -fx-aqua-inner-focus-color: -dark-wind-transparent;
+    -fx-aqua-outer-focus-color: -dark-wind;
+}
+
+.button{
+    -fx-aqua-start-color-1: -light-wind;
+    -fx-aqua-start-color-2: -dark-wind;
+    -fx-aqua-start-color-3: -dark-wind;
+    -fx-aqua-start-color-4: -light-white-wind;
+    -fx-aqua-end-color-1: -lighter-wind;
+    -fx-aqua-end-color-2: -light-white-wind;
+    -fx-aqua-end-color-3: -light-white-wind;
+    -fx-aqua-end-color-4: -lighter-white-wind;
+    -fx-aqua-armed-style:"linear-gradient(-light-wind 0.0%, -dark-wind-armed 100.0% ),
+        -main-gradient,
+        radial-gradient(focus-angle 180.0deg, focus-distance 95.0%, center 1.0% 50.0%,
+        radius 50.0%, -dark-wind, transparent),
+        radial-gradient(focus-angle 0.0deg, focus-distance 95.0%, center 100.0% 50.0%,
+        radius 50.0%, -dark-wind, transparent)";
+}
+
+.button:armed, .button:default:armed, .toggle-button:armed, .toggle-button:selected:armed{
+    -fx-background-color:
+        linear-gradient(-light-wind 0.0%, -dark-wind-armed 100.0% ),
+        -main-gradient,
+        radial-gradient(focus-angle 180.0deg, focus-distance 95.0%, center 1.0% 50.0%,
+        radius 50.0%, -dark-wind, transparent),
+        radial-gradient(focus-angle 0.0deg, focus-distance 95.0%, center 100.0% 50.0%,
+        radius 50.0%, -dark-wind, transparent);
+}
+
+.check-box:selected > .box,
+.check-box:indeterminate > .box,
+.radio-button:selected > .radio {
+    -fx-background-color: -main-gradient;
+}
+
+.check-box:selected:armed > .box,
+.radio-button:selected:armed > .radio {
+    -fx-background-color: -main-gradient-armed;
+}
+
+.titled-pane:focused  > .title > .arrow-button > .arrow  {
+    -fx-effect: dropshadow(one-pass-box , -dark-wind, 6.5, 0.8 , 0.0, 0.0);
+}
+
+
+/* Draws focus border around tableview */
+.table-view:focused,
+.tree-table-view:focused,
+.tree-view:focused,
+.list-view:focused  {
+    -fx-effect: dropshadow(one-pass-box , -dark-wind-transparent, 8.0, 0.8 , 0.0, 0.0);
+}
+
+.table-row-cell:odd,
+.tree-table-row-cell:odd {
+    -fx-background-color: -dark-wind;
+}
+
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected, 
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected,
+.table-view:row-selection:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:focused:selected:hover,
+.tree-table-view:row-selection:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused:selected:hover,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected, 
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected:hover,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:focused:selected:hover {
+    -fx-background-color: -fx-selected-row;
+}
+
+/* When the list-cell is selected and focused */
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:focused:selected,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient( -light-white-wind, -dark-wind-armed),
+     linear-gradient(-light-white-wind, -dark-wind);
+    -fx-text-fill: black;
+}
+
+/* When the ListView is _not_ focused, we show alternate selection colors */
+.list-cell:filled:selected:focused,
+.list-cell:filled:selected {
+    -fx-background-color: linear-gradient(-light-white-wind-armed, -dark-wind-armed),
+     linear-gradient(-light-white-wind-armed, -dark-wind-armed);
+    -fx-text-fill: black;
+}
+
+.list-view:horizontal:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, -light-white-wind, -dark-wind-armed),
+        linear-gradient(to right, -light-white-wind, -dark-wind);
+    -fx-text-fill: black;
+}
+
+.list-view:horizontal > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, -light-white-wind-armed, -dark-wind-armed),
+     linear-gradient(to right, -light-white-wind-armed, -dark-wind-armed);
+    -fx-text-fill: black;
+}
+
+.pagination > .pagination-control > .control-box > .bullet-button:selected {   
+    -fx-background-color: -main-gradient;
+}
+
+.progress-indicator > .determinate-indicator > .progress {
+    -fx-background-color:
+       rgb(208.0, 208.0, 208.0),
+       radial-gradient(center 50.0% 50.0%, radius 50.0%, -dark-wind, -white-wind);
+}
+
+.progress-indicator > .determinate-indicator > .tick {
+    -fx-background-color: rgb(208.0, 208.0, 208.0), black;
+}
+
+.progress-bar {
+    -fx-aqua-determinate-image: "progress_wind.png";
+}
+
+.progress-bar:indeterminate  {
+      -fx-aqua-indeterminate-color:-dark-wind;      
+}
